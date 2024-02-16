@@ -1,0 +1,79 @@
+# Funcion para limpiar la terminal
+
+import os
+def clear():
+    if os.name == 'nt':
+        os.system('cls')        
+    else:
+        os.system('clear')
+
+# despues clear()
+    
+######################################################################################################################################
+# si quiero crear un menu principal, hago un archivo principal y importo los otros archivos con el nombre del archivo
+
+import Campers
+import trainers
+import cordinador
+import reportes
+
+#####################################################################################################################################
+ # Cargar contenido del archivo JSON a una variable
+ 
+ with open('proceso_de_inscripcion.json', 'r') as proceso_file:
+            proceso_de_inscripcion = json.load(proceso_file)  
+
+#####################################################################################################################################
+# ejemplo diccionario
+
+ nuevo_dato = {
+                "n_identificacion": n_identificacion,
+                "Nombre": str(input("Nombre completo: ")),
+                "Direccion": str(input("Direccion: ")),
+                "Acudiente": str(input("Nombre acudiente: ")),
+                "Celular": str(input("Numero celular: ")),
+                "Fijo": str(input("Numero fijo: ")), 
+                "Estado": "proceso_de_inscripcion",
+                "Riesgo": ""
+            }
+
+#####################################################################################################################################
+ # Agregar datos al archivo JSON
+ 
+ proceso_de_inscripcion["campers"]["campers_pre_inscritos"].append(nuevo_dato) 
+
+# Guardar cambios
+
+            with open('proceso_de_inscripcion.json', 'w') as file:
+                json.dump(proceso_de_inscripcion, file, indent=2)  
+
+#####################################################################################################################################
+# definiciones
+
+while: La declaración while se utiliza para repetir un bloque de código mientras una condición dada sea verdadera.
+
+if: La declaración if se utiliza para ejecutar un bloque de código si una condición dada es verdadera.
+
+else: La declaración else se utiliza en conjunto con if para ejecutar un bloque de código si la condición del if no se cumple.
+
+elif: La declaración elif se utiliza para agregar más condiciones después de un if y antes de un else. 
+Permite verificar múltiples expresiones para ver si alguna de ellas es verdadera.
+
+break: romper
+
+try, except: Son bloques de código utilizados para manejar excepciones. 
+El bloque try se utiliza para probar un bloque de código en busca de errores, 
+mientras que el bloque except se utiliza para manejar la excepción si ocurre.
+
+ValueError: Es una excepción que se genera cuando una función recibe un argumento con un tipo correcto pero un valor incorrecto.
+
+indent: la indentación se refiere al espaciado al principio de una línea de código.
+Se utiliza para definir la estructura del código y es crucial para que el código funcione correctamente.
+
+.lower(): Es un método de cadena que se utiliza para convertir todos los caracteres de una cadena en minúsculas. 
+
+return: Es una declaración utilizada para devolver un valor desde una función. 
+Cuando se encuentra una declaración return, la función finaliza y devuelve el valor especificado.
+
+continue: Es una declaración utilizada dentro de bucles para saltar el resto del código en la iteración actual y 
+continuar con la siguiente iteración del bucle.

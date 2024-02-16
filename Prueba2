@@ -1,0 +1,34 @@
+import json 
+with open ('ejercicioprueba.json', 'r') es i:
+  prueba = json.load(i)
+  
+nuevo_dato = {
+  "id": int(input("ingrese id")),
+  "nombre" : int(input("ingrese nombre"))
+}
+
+#agregar nuevo dato al archivo json
+ejercicioprueba ["datos"]["personas"].append(nuevodato)
+
+#guardar datos
+with open ('ejercicioprueba.json', 'w') es i:
+  json.dump(ejeecicioprueba,i,indent=2)
+  
+#ordenar datos
+personas=ejercicioprueba['datos']['personas']
+personasordenadas=sorted(personas,keys=lamba x: str(x['nombre']))
+
+#imprimir datos
+for i in personasordenadas:
+  print("nombres",i,["nombres"],"numero de id",i,["id"])
+  
+#eliminar persona por id
+ideliminar= input("ingrese el id que desea iminar")
+for i in personas:
+  if i['id']==ideliminar:
+    personas.remove(i)
+    break
+    
+#guardar datos en json
+with open ('ejercicioprueba.json', 'w') es i:
+  json.dump(ejercicioprueba,k,indent=2) 
